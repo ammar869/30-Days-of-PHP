@@ -102,3 +102,51 @@ function mytheme_excerpt_more($more) {
 }
 
 add_filter('excerpt_more', 'mytheme_excerpt_more');
+
+
+
+//---------------practice
+
+<?php
+
+function mytheme_setup() {
+    add_theme_support('post-thumbnails');
+    add_theme_support('title-tag');
+}
+add_action('after_setup_theme', 'mytheme_setup');
+
+
+function mytheme_load_assets() {
+    wp_enqueue_style(
+        'mytheme-style',
+        get_stylesheet_uri()
+    );
+}
+add_action('wp_enqueue_scripts', 'mytheme_load_assets');
+
+
+function mytheme_register_menu() {
+    register_nav_menus([
+        'main-menu' => 'Main Menu'
+    ]);
+}
+add_action('after_setup_theme', 'mytheme_register_menu');
+
+
+function mytheme_excerpt_length($length) {
+    return 15;
+}
+add_filter('excerpt_length', 'mytheme_excerpt_length');
+
+
+function mytheme_excerpt_more($more) {
+    return '...';
+}
+add_filter('excerpt_more', 'mytheme_excerpt_more');
+
+
+function mytheme_footer_text() {
+    echo "<p>Powered by My Custom Theme</p>";
+}
+add_action('wp_footer', 'mytheme_footer_text');
+

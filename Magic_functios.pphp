@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>The __LINE__ Constant</h2>
+<p>This constant returns the current line number:</p>
+
+<?php
+echo __LINE__;
+?>
+ 
+</body>
+</html>
