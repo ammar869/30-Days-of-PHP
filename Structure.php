@@ -58,3 +58,18 @@ get_footer();
 wp_footer();
 ?>
 </body>
+
+</html>
+------------------------functions.php------------------------
+<?php
+// Enable featured images
+add_theme_support('post-thumbnails');
+
+// Load CSS properly
+function load_theme_assets() {
+  wp_enqueue_style(
+    'main-style',                     // Handle name
+    get_stylesheet_uri()              // style.css path
+  );
+}
+add_action('wp_enqueue_scripts', 'load_theme_assets');
