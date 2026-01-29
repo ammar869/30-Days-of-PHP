@@ -31,3 +31,30 @@ get_header();
 // Include the footer.php file
 get_footer();
 ?>
+
+
+// --------------------------header.php--------------------------
+<!DOCTYPE html>
+<html <?php language_attributes(); ?>>
+<head>
+  <meta charset="<?php bloginfo('charset'); ?>">
+
+  <!-- Required for plugins & styles -->
+  <?php wp_head(); ?>
+</head>
+
+<body <?php body_class(); ?>>
+<header>
+  <h1><?php bloginfo('name'); ?></h1>
+  <p><?php bloginfo('description'); ?></p>
+</header>
+--------------------------footer.php--------------------------
+<footer>
+  <p>© <?php echo date('Y'); ?> My Website</p>
+</footer>
+
+<?php
+// Required for scripts (VERY IMPORTANT)
+wp_footer();
+?>
+</body>
