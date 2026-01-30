@@ -72,7 +72,5 @@ function load_theme_assets() {
     get_stylesheet_uri()              // style.css path
   );
 
-
-  
 }
 add_action('wp_enqueue_scripts', 'load_theme_assets');

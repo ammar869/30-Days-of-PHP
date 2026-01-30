@@ -116,6 +116,9 @@ function mytheme_setup() {
 add_action('after_setup_theme', 'mytheme_setup');
 
 
+
+
+
 function mytheme_load_assets() {
     wp_enqueue_style(
         'mytheme-style',
